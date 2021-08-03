@@ -3,10 +3,21 @@ from tkinter import ttk
 import database
 
 def mostrar_usuario():
-    db = database.MyDatabase()
-    db.read_db()
-    print("RESULTADO - FrontEnd: " + str(database.nombre))
-
+    db_demo = database.MyDatabase()
+    db_demo.read_db()
+    fila = 0 
+    print("FILA: " + str(fila))
+    print("RESULTADO Lista - FrontEnd: " + str(database.data))
+    for user in database.data:
+        registro = user
+        print('RESULTADO - FrontEnd: ' + str(fila) + " - " + str(registro))
+        title1 = Label(frame_title, 
+              text=registro, 
+              font=("Century Gothic", "22", "bold"),
+              justify=LEFT)
+        title1.place(x=25, y=10)
+        fila = fila + 1     
+ 
 window = Tk()
 frame_app = Frame(window, width=400, height=600, bg="red")
 frame_app.pack()

@@ -2,7 +2,7 @@ from codecs import register
 import re
 import mysql.connector
 
-nombre = ""
+data = []
 
 class MyDatabase:
     def open_connection(self):
@@ -16,10 +16,12 @@ class MyDatabase:
     def read_db(self):
         my_connection = self.open_connection()
         cursor = my_connection.cursor()
-        query = "SELECT * FROM TBL_USUARIOS WHERE ID_USUARIO = 1"
+        query = "SELECT * FROM TBL_USUARIOS WHERE ID_USUARIO = 2"
         cursor.execute(query)  
+        registro = 0
         for fila in cursor:
-            nombre = fila[1]
-            print("FILA - BackEnd: " + str(fila[1])) 
-            print("RESULTADO - BackEnd: " + str(nombre))
+            data.append(fila)
+            print('RESULTADO - BackEnd: ' + str(registro) +" - "+ str(data[registro]))
+            registro = registro + 1
+
         my_connection.close()     
