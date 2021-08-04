@@ -16,7 +16,7 @@ class MyDatabase:
     def read_db(self):
         my_connection = self.open_connection()
         cursor = my_connection.cursor()
-        query = "SELECT * FROM TBL_USUARIOS WHERE ID_USUARIO = 2"
+        query = "SELECT * FROM TBL_USUARIOS WHERE ID_USUARIO = 1"
         cursor.execute(query)  
         registro = 0
         for fila in cursor:

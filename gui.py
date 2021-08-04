@@ -35,7 +35,7 @@ title.place(x=250, y=40)
 
 # Widgets dentro del contender TITLE
 title1 = Label(frame_title, 
-              text="Resultado - BDD", 
+              text="Resultado", 
               font=("Century Gothic", "22", "bold"),
               justify=LEFT)
 title1.place(x=25, y=10)
